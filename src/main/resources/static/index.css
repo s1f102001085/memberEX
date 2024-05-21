@@ -1,0 +1,79 @@
+header{
+	margin: 0;
+}
+
+body{
+	margin: 0;
+}
+
+#title{
+	background-color: rgb(175, 230, 248);
+	margin: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* divのスタイル */
+#member {
+	flex-basis: 40%; /* 要素を2列に分割 */
+	padding: 10px; /* 適宜余白を設定 */
+	box-sizing: border-box; /* paddingが要素の幅に含まれるようにする */
+	margin: 20px 60px;
+}
+
+#human_image{
+	width: 180px;
+	height: 180px;
+}
+
+main{
+	background-color: rgb(251, 251, 242);
+}
+
+.hidden {
+    display: none !important; /* 非表示にする */
+}
+
+/* ボタンの基本的なスタイル */
+button {
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    border: none; /* ボーダーをなしにする */
+    border-radius: 5px; /* ボーダーの角を丸くする */
+    background-color: #4CAF50; /* ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+    font-size: 16px; /* ボタンのテキストのサイズ */
+    cursor: pointer; /* カーソルをポインターにする */
+    transition: background-color 0.3s; /* 背景色が変わる際のトランジション */
+}
+
+/* ボタンのホバー時のスタイル */
+button:hover {
+    background-color: #45a049; /* ホバー時の背景色 */
+}
+
+/* ボタンのアクティブ時のスタイル */
+button:active {
+    background-color: #357a38; /* アクティブ時の背景色 */
+}
+
+/* 前へボタンの追加スタイル */
+#prevButton {
+    margin-right: 10px; /* ボタンの右側の余白 */
+}
+
+/* 次へボタンの追加スタイル */
+#nextButton {
+    margin-left: 10px; /* ボタンの左側の余白 */
+}
+
+#pagination{
+	text-align: center;
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"  href="../static/index.css" th:href="@{/index.css}">
+<title>member</title>
+</head>
+<body>
+	<header>
+		<h1 id="title">メンバー</h1>
+	</header>
+	
+	<main>
+		<div>
+			
+		</div>
+		<div id="content">
+			<div th:each="item, iterStat : ${data}" id="member" th:id="'member_' + ${iterStat.index}" class="hidden">
+				<img src="../static/images.png" th:src="@{/images.png}" id="human_image">
+				<div>
+					<p th:text="${item.id}"></p>
+					<span th:text="${item.name}"></span>
+					<span th:text="${item.age}"></span>
+					<p th:text="${item.department}"></p> 
+					<p th:text="${item.post}"></p>
+				</div>
+			</div>
+		</div>
+		<div id="pagination">
+		        <button id="prevButton" th:if="${data.size() > 10}">&lt; 前へ</button>
+		        <button id="nextButton" th:if="${data.size() > 10}">次へ &gt;</button>
+		</div>
+	</main>
+
+<script type="text/javascript" th:src="@{/index.js}"></script>
+</body>
+</html>
