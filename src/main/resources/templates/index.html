@@ -12,7 +12,14 @@
 	
 	<main>
 		<div>
-			
+			<form method="post" action="" id="search-form">
+			    <div>
+			        <input type="text" id="search-input" name="find" th:value="${find}" placeholder="名前を検索">
+			    </div>
+			    <div>
+			        <input type="submit" value="検索" id="search-button">
+			    </div>
+			</form>
 		</div>
 		<div id="content">
 			<div th:each="item, iterStat : ${data}" id="member" th:id="'member_' + ${iterStat.index}" class="hidden">
@@ -27,9 +34,10 @@
 			</div>
 		</div>
 		<div id="pagination">
-		        <button id="prevButton" th:if="${data.size() > 10}">&lt; 前へ</button>
-		        <button id="nextButton" th:if="${data.size() > 10}">次へ &gt;</button>
+		        <button id="prevButton" th:if="${data.size() > 14}">&lt; 前へ</button>
+		        <button id="nextButton" th:if="${data.size() > 14}">次へ &gt;</button>
 		</div>
+		<a href="/edit" id="edit">管理</a>
 	</main>
 
 <script type="text/javascript" th:src="@{/index.js}"></script>

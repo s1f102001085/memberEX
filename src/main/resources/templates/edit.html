@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"  href="../static/edit.css" th:href="@{/edit.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="/" class="page_top_btn">&lt; 編集を終わる</a>
+	<table>
+	      <thead><tr>
+	        <th>ID</th><th>Name</th><th>Age</th><th>Department</th><th>Post</th><th></th>
+	      </tr></thead>
+	      <tbody>
+	      <tr th:each="item:${data}">
+	        <td th:text="*{item.id}"></td>
+	        <td><a th:text="*{item.name}"
+	          th:href="@{/update(id=*{item.id})}"></a></td>
+	        <td th:text="*{item.age}"></td>
+	        <td th:text="*{item.department}"></td>
+			<td th:text="*{item.post}"></td>
+			<td>
+                <form method="post" action="/delete">
+                    <input type="hidden" name="id" th:value="${item.id}">
+                    <button type="submit">delete</button>
+                </form>
+            </td>
+	       </tr>
+	      </tbody>
+	</table>
+	<a href="/add" class="page_add_btn">新規</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"  href="../static/add.css" th:href="@{/add.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="/edit" id="bc-btn">&lt; 戻る</a>
+	<div>
+	  <h2 class="title">データ更新</h2>
+	  <p th:text="${msg}" class="title"></p>
+	  <div class="form-container">
+	   <form method="post" action="/update" th:object="${form}">
+	    <input type="hidden" name="id" th:value="*{id}">
+		<div>
+	        <label class="form-label">名前:</label>
+	        <input type="text" name="name" th:value="*{name}" required>
+	    </div>
+	    <div>
+	        <label class="form-label">年齢:</label>
+	        <input type="number" name="age" th:value="*{age}">
+	    </div>
+	    <div>
+	        <label class="form-label">部署:</label>
+	        <select class="dropbtn" name="department" required>
+	            <option value="ITソリューション事業部">ITソリューション事業部</option>
+	            <option value="営業部">営業部</option>
+	            <option value="総合職">総合職</option>
+	        </select>
+	    </div>
+	    <div>
+	        <label class="form-label">役職:</label>
+	        <select class="dropbtn" name="post" required>
+	            <option value="開発エンジニア">開発エンジニア</option>
+	            <option value="デザイナー">デザイナー</option>
+	            <option value="営業">営業</option>
+	        </select>
+	    </div>
+	    <div>
+	        <input type="submit" value="更新">
+	    </div>
+	   </form>
+	  </div>
+	</div>
+</body>
+</html>
